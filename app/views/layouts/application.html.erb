@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Praise the Loaf</title>
+    <title>Loaf-er</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,8 +11,20 @@
   </head>
 
   <body>
-    <h1>This is the application.html.erb file</h1>
-    <p>all code below this is written in app/views/welcome/index.html.erb</p>
+    <header class="header">
+      <div class="brand">
+        <h1>Lorem Ipsum</h1>
+      </div>
+
+      <div class="search">
+        <div class="search-field">
+          <p>I'm a search field</p>
+        </div>
+        <div class="search-icon">
+          <p>:)</p>
+        </div>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

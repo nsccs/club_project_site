@@ -3,9 +3,77 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 body {
-  color: blue;
+  color: white;
 }
 
 h1 {
-  color: green;
+  color: coral;
+}
+
+.carousel {
+  display: flex;
+  background-color: gray;
+  height: 300px;
+  margin: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+}
+
+.upcoming-events {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  display: flex;
+  background-color: black;
+  height: 300px;
+  width: 400px;
+}
+
+.upcoming-events p{
+  margin: 20px;
+  color: grey;
+}
+
+.upcoming-events h2{
+  margin: 20px;
+}
+
+.discord {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  display: flex;
+  background-color: black;
+  height: 300px;
+  width: 400px;
+}
+
+.discord p{
+  margin: 20px;
+  color: grey;
+}
+
+.discord h2{
+  margin: 20px;
+}
+
+.game {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  color: black;
+  border: 2px;
+  border-style: solid;
+  height: 600px;
+  width: 700px;
 }

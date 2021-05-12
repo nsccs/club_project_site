@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+ header {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ body {
+   width: 1140px;
+ }
+
+ .brand{
+   margin: 10px;
+ }
+
+.search {
+  margin:10px;
+  display: flex;
+  align-self: flex-end;
+}
+
+.search-field {
+  background-color: black;
+  color: white;
+}
+
+.search-icon {
+  background-color: white;
+  color: black;
+}
