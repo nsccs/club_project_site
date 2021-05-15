@@ -1,24 +1,35 @@
-# README
+# NSC Computer Science Club Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of Contents
+* [Ruby version](#ruby-version)
+* [System dependencies](#system-dependencies)
+* [Configuration](#configuration)
+* [Database creation](#database-creation)
+* [Database initialization](#database-initialization)
+* [How to run the test suite](#how-to-run-the-test-suite)
+* [Services](#services)
+* [Deployment instructions](#deployment-instructions)
 
-Things you may want to cover:
+## Ruby version
+3.0.1
 
-* Ruby version
+## System dependencies
+// TODO
 
-* System dependencies
+## Configuration
+// TODO
 
-* Configuration
+## Database creation
+// TODO
 
-* Database creation
+## Database initialization
+// TODO
 
-* Database initialization
+## How to run the test suite
+// TODO
 
-* How to run the test suite
+## Services
+// TODO (job queues, cache servers, search engines, etc.)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployment instructions
+// TODO
