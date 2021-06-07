@@ -11,8 +11,18 @@
   </head>
 
   <body>
-    <h1>This is the application.html.erb file</h1>
-    <p>all code below this is written in app/views/welcome/index.html.erb</p>
+    <div>
+      <h2>Oh, hai!</h2>
+      <% if logged_in? %>
+          <h3>You are logged in, <%= current_user.username %>, and it's great you stopped by to say hello. Logout IF YOU MUST</h3>
+          <%= button_to "Logout", '/logout', method: :post%>
+      <% else %>
+        <h3>It's nice to see you: login or sign up.</h3>
+        <%= button_to "Login", login_path, method: :get%>
+        <%= button_to "Sign Up", new_user_path, method: :get%>
+      <% end %>
+      <br/>
+    </div>
     <%= yield %>
   </body>
 </html>
