@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    puts "PICKLES #{params}"
   end
 
   def create
