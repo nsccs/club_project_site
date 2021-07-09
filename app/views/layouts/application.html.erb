@@ -8,21 +8,156 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <div>
-      <h2>Oh, hai!</h2>
-      <% if logged_in? %>
-          <h3>You are logged in, <%= current_user.username %>, and it's great you stopped by to say hello. Logout IF YOU MUST</h3>
-          <%= button_to "Logout", '/logout', method: :post%>
-      <% else %>
-        <h3>It's nice to see you: login or sign up.</h3>
-        <%= button_to "Login", login_path, method: :get%>
-        <%= button_to "Sign Up", new_user_path, method: :get%>
-      <% end %>
-      <br/>
+    <!-- If we ever get the modal working -->
+    <div class="modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col-5">
+              <div class="card p-3 m-5">
+                <%= form_tag '/login', method: 'post', :class => 'form' do  %>
+                  <div class="form-group">
+                    <%= label_tag 'user_name', 'Username'%>
+                    <%= text_field_tag :user_name, nil, class: 'form-control', autofocus: true %>
+                  </div>
+                  <div class="form-group">
+                    <%=label_tag 'password', "Password" %>
+                    <%= password_field_tag :password, nil, class: 'form-control'  %>
+                  </div>
+                  <%= submit_tag "Log on in!", class: 'btn btn-default btn-lg btn-submit' %>
+                  <%= link_to "Cancel" , '/signup', class: 'btn btn-default btn-lg'%>
+                <%end%>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
     </div>
+  <!-- end modal -->
+
+  <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark justify-content-between" id="nav">
+      <div class="container-fluid d-flex justify-content-start">
+        <a class="nav-item navbar-brand" href="<%=welcome_path%>">GD LOGO</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		        <span class="navbar-toggler-icon"></span>
+	      </button>
+
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+          <div class="navbar-nav">
+            <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0 align-items-center">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="#events" href="#events">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#community">Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+              </li>
+              <%= link_to "Become a Member", new_user_path,  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
+            </ul>
+          </div>
+          <div class="navbar-nav ml-auto d-flex justify-content-between">
+            <% if logged_in? %>
+            <div class="nav-item dropdown">
+              <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
+                <img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" class="avatar" alt="Avatar">
+                <%= current_user.username %>
+                <b class="caret"></b>
+              </a>
+              <div class="dropdown-menu">
+                <%= link_to "Logout", '/logout', class: "nav-item", id: "logout-link",method: :post%>
+              </div>
+            <% else %>
+            <div class="nav-item">
+              <%= link_to "Log in", '/login',  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
+              <!-- modal trigger button -->
+              <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" href="#loginModal">
+                Log in!
+              </button> -->
+
+
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
     <%= yield %>
+    <footer class="w-100 bg-light text-center text-white fixed-bottom" style="background-color: #333B3F;">
+      <!-- Grid container -->
+      <div class="text-center p-3" style="background-color: #333B3F;">
+        <div class="container" style="background-color: #333B3F;">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #3b5998;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+
+            <!-- Twitter -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #55acee;"
+              href="https://twitter.com/NscDsc"
+              role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+
+            <!-- Google: bevy site, not google plus-->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #dd4b39;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+
+            <!-- Linkedin -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #0082ca;"
+              href="https://www.linkedin.com/company/north-seattle-college-google-dsc/"
+              role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <!-- Github -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #333333;"
+              href="https://github.com/NSC-Computer-Science-Club"
+              role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        © 2021 Copyright:
+        <a class="text-white" href="https://github.com/NSC-Computer-Science-Club">North Seattle CS Club</a>
+      </div>
+      <!-- Grid container -->
+
+    </footer>
+    <!-- <script type="text/javascript">
+      import { Modal } from 'bootstrap.esm.min.js'
+      let myModal = new Modal(document.getElementById('loginModal'));
+      myModal.show();
+    </script> -->
   </body>
 </html>

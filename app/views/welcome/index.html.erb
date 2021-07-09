@@ -1,27 +1,114 @@
-<!-- <h1>Welcome#index</h1> -->
-<!-- <p>Find me in app/views/welcome/index.html.erb</p> -->
-<div id="mainBody">
-
-  <div id="header">
-    <div id="mainTitle">Lorem ipsum</div>
+<div class="d-flex flex-column align-items-center justify-content-center" id="mainContent">
+  <div id="carouselIndicators" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselIndicators" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag("placeholder.png", class: "d-block w-100", alt: "Community") %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("placeholder2.png", class: "d-block w-100", alt: "Android") %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("placeholder.png", class: "d-block w-100", alt: "Career") %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("placeholder2.png", class: "d-block w-100", alt: "Ethics") %>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 
-  
+  <div data-bs-spy="scroll" data-bs-target="#nav" data-bs-offset="0" tabindex="0" class="d-flex flex-column align-items-center justify-content-center" id="mainContent">
 
-  <div id="secondHeader"> <div class="showOffText">News slide thing?!</div> </div>
+    <div class="w-75 d-flex justify-content-around shadow bg-white p-3" id="community">
+      <div class="container col-9" height="500">
+        <div class="d-flex align-items-center justify-content-center row">
+          <div class="col-9 " height="500">
+            <%= image_tag("DSCLOGO.png", class: "d-block w-100", alt: "Google Developer Logo") %>
+          </div>
+        </div>
+        <div class="row" id="discord">
+          <div class="col" >
+            <div class="card w-100 shadow bg-white p-3 m-4">
+              <iframe src="https://discord.com/widget?id=564559681339785228&theme=dark"
+                      width="100%"
+                      height="350"
+                      allowtransparency="true"
+                      frameborder="0"
+                      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+              </iframe>
+              <h3 class="text-center">Collaborative, engaged community coming
+                together to learn and help local businesses and organizations.</h3>
+            </div>
 
-  <div id="mainContent">
+          </div>
+          <!-- <div class="col-6">
+            <div class="card w-100 shadow bg-white p-3 m-4">
 
-    <div id="gameBox">
-      <div class="showOffText">Game box!</div>
+            </div>
+
+          </div> -->
+        </div>
+      </div>
     </div>
 
-    <div class="news" id="events">
-      <div class="showOffText">Events!</div>
-    </div>
-    <div class="news" id="discord">
-      <div class="showOffText">Discord!</div>
+    <div class="w-75 d-flex justify-content-center shadow bg-white p-3" id="about">
+      <div class="container col-9">
+        <h1 class="text-center">Meet the Core Team</h1>
+        <div class="row">
+          <div class="col-6" id="core-team-cards">
+            <div class="card border-danger w-100 shadow bg-white p-3 m-4" style="width: 300px;">
+                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image") %>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Amanda René Capella</h5>
+                    <p class="card-text">President</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-6" id="core-team-cards">
+            <div class="card border-warning w-100 shadow bg-white p-3 m-4" style="width: 300px;">
+                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image") %>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Beck Thompson</h5>
+                    <p class="card-text">Community Lead</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-6" id="core-team-cards">
+            <div class="card border-success w-100 shadow bg-white p-3 m-4" style="width: 300px;">
+                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image") %>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Lilith Caldwell</h5>
+                    <p class="card-text">PR Lead</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-6" id="core-team-cards">
+            <div class="card border-primary w-100 shadow bg-white p-3 m-4" style="width: 300px;">
+                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image") %>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Kristin Jue</h5>
+                    <p class="card-text">Assistant Lead</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-</div>

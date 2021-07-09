@@ -15,23 +15,11 @@ class SessionsController < ApplicationController
     end
   end
 
-  def login
-  end
-
-  def welcome
-  end
-
-  def page_requires_login
-
-  end
-
   def destroy
     #clear the sessions[:user_id]
     puts session[:user_id]
     session.delete(:user_id)
-    #params[:id] = nil
     #redirect the user back to the welcome page
-
     redirect_to '/welcome'
   end
 end

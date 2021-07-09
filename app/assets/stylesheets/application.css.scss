@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   color: #757575;
+ }
+
+ .navbar {
+  background: none;
+ }
+
+ /* Add a black background color to the top navigation */
+/* .topnav {
+  overflow: hidden;
+}
+
+.nav-left {
+  float: left;
+}
+
+.nav-right {
+  float: right;
+} */
+
+/* Style the links inside the navigation bar */
+/* .topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+} */
+
+/* Change the color of links on hover */
+/* .topnav #home-link a:hover {
+  background-color: #4486f4;
+  color: white;
+}
+
+a:hover#events-link {
+  background-color: #FF9E0F;
+  color: white;
+}
+
+a:hover#contact-link {
+  background-color: #fbbc05;
+  color: white;
+}
+
+a:hover#about-link {
+  background-color: #1CA45C;
+  color: white;
+}
+
+a:hover#login-link {
+  background-color: #8DC44F;
+  color: white;
+}
+
+a:hover#signup-link {
+  background-color: #4486f4;
+  color: white;
+} */
+
+/* Add a color to the active/current link */
+/* .topnav a.active {
+  background-color: white;
+  color: black;
+} */
