@@ -2,28 +2,28 @@
     <div class="notice"><%= flash[:warning] %></div>
 <% end %>
 
-<div class="container">
-  <div class="col-5">
-    <div class="card p-3 m-5">
-      <%= form_tag '/signin', method: 'post', :class => 'form' do  %>
-        <!-- <div class="form-group">
-          <%# <%= label_tag 'email', 'Email'%> %>
-          <%# <%= text_field_tag :email, nil, class: 'form-control', autofocus: true %> %>
-        </div> -->
-        <div class="form-group">
-          <%= label_tag 'user_name', 'Username'%>
-          <%= text_field_tag :user_name, nil, class: 'form-control has-validation', autofocus: true %>
-          <div class="invalid-feedback">
-            Please choose a username.
-          </div>
+<div class="d-flex flex-column align-items-center justify-content-center"
+     id="mainContent">
+   <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" style="height:100vh;">
+    <div class="container">
+      <div class="col-5">
+        <div class="card p-3 m-5">
+          <%= form_for @user do |f|%>
+            <div class="form-group">
+              <%= f.label :username%><br>
+              <%= f.text_field :username, class: 'form-control has-validation, autofocus: true'%><br>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+              <%= f.label :password %><br>
+              <%= f.password_field :password, class: 'form-control'%><br>
+              <%= f.submit 'Sign me up', :class => 'btn btn-default btn-lg btn-submit'%>
+              <%= link_to "Cancel", '/login'%>
+            </div>
+
+          <%end%>
         </div>
-        <div class="form-group">
-          <%=label_tag 'password', "Password" %>
-          <%= password_field_tag :password, nil, class: 'form-control'  %>
-        </div>
-        <%= submit_tag "Sign on up!", class: 'btn btn-default btn-lg btn-submit' %>
-        <%= link_to "Cancel" , '/login', class: 'btn btn-default btn-lg'%>
-      <%end%>
+      </div>
     </div>
   </div>
 </div>
