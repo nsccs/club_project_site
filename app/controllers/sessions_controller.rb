@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    puts "pickles #{params}"
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
@@ -16,8 +17,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    #clear the sessions[:user_id]
-    puts session[:user_id]
     session.delete(:user_id)
     #redirect the user back to the welcome page
     redirect_to '/welcome'
