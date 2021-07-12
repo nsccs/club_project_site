@@ -35,20 +35,13 @@
        style="background-image: url('../../assets/images/paper-texture-structure-stained-paper.jpeg')">
 
     <div class="w-75 d-flex justify-content-around shadow-lg bg-white p-3" id="community">
-      <div class="container col-11" height="500">
-        <div class="d-flex align-items-center justify-content-around row">
-          <div class="col-5">
-            <%= image_tag("DSCLOGO.png", class: "d-block w-100", alt: "Google Developer Logo") %>
+      <div class="container col-9" height="500">
+        <div class="d-flex justify-content-center row mb-5" id="discord">
+          <div class="col-6">
+            <h1 style="margin-top: 20px;">We're a community of students who came together... </h1>
           </div>
-          <div class="col-7" >
-            <div class="card w-100 d-flex align-items-center justify-content-center shadow bg-white p-3 m-4">
-              <iframe width="95%" height="300" src="https://www.youtube.com/embed/earTjC0iSjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-around row" id="discord">
-          <div class="col" >
-            <div class="card w-100 shadow bg-white p-3 m-4">
+          <div class="col-6" >
+            <div class="card w-100 shadow bg-white p-3">
               <iframe src="https://discord.com/widget?id=564559681339785228&theme=dark"
                       width="100%"
                       height="350"
@@ -56,9 +49,36 @@
                       frameborder="0"
                       sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
               </iframe>
-
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="events">
+      <div class="container col-9">
+        <div class="row mb-5">
+          <h1 class="text-right my-5">...looking to build skills...</h1>
+        </div>
+        <div class="row mb-5">
+          <%= image_tag("allthetech.png", class: "d-block w-100", alt: "Firebase Logo") %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="projects">
+      <div class="container col-9">
+        <div class="row mb-5">
+          <h1 class="text-right my-5">...and help our community thrive.</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="join">
+      <div class="container col-9">
+        <div class="row mb-5">
+          <h1 class="text-right my-5">Join us.</h1>
 
         </div>
       </div>
@@ -66,19 +86,20 @@
 
     <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="about">
       <div class="container col-9">
-        <h1 class="text-center">Meet the Core Team</h1>
-        <div class="row">
+
+        <h1 class="text-center my-5">Meet the Core Team</h1>
+        <div class="row mb-5">
           <div class="col-4" id="core-team-cards">
-            <div class="card border-danger w-100 shadow bg-white p-3 m-4" style="width: 300px;">
+            <div class="card border-danger w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
                 <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 250px;") %>
                 <div class="card-body text-center">
-                    <h5 class="card-title">Amanda René Capella</h5>
+                    <h5 class="card-title">René Capella</h5>
                     <p class="card-text">President</p>
                 </div>
             </div>
           </div>
           <div class="col-4" id="core-team-cards">
-            <div class="card border-warning w-100 shadow-lg bg-white p-3 m-4" style="width: 300px;">
+            <div class="card border-warning w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
                 <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 250px;") %>
                 <div class="card-body text-center">
                     <h5 class="card-title">Bill Barry</h5>
@@ -87,7 +108,7 @@
             </div>
           </div>
           <div class="col-4" id="core-team-cards">
-            <div class="card border-success w-100 shadow-lg bg-white p-3 m-4" style="width: 300px;">
+            <div class="card border-success w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
                 <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 250px;") %>
                 <div class="card-body text-center">
                     <h5 class="card-title">Lilith Caldwell</h5>
@@ -96,7 +117,7 @@
             </div>
           </div>
           <div class="col-4" id="core-team-cards">
-            <div class="card border-primary w-100 shadow-lg bg-white p-3 m-4" style="width: 300px;">
+            <div class="card border-primary w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
                 <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 250px;") %>
                 <div class="card-body text-center">
                     <h5 class="card-title">Beck Thompson</h5>
@@ -105,7 +126,7 @@
             </div>
           </div>
           <div class="col-4" id="core-team-cards">
-            <div class="card border-danger w-100 shadow-lg bg-white p-3 m-4" style="width: 300px;">
+            <div class="card border-danger w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
                 <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 250px;") %>
                 <div class="card-body text-center">
                     <h5 class="card-title">Kristin Jue</h5>
@@ -114,10 +135,10 @@
             </div>
           </div>
           <div class="col-4" id="core-team-cards">
-            <div class="card border-warning w-100 shadow-lg bg-white p-3 m-4" style="width: 300px;">
+            <div class="card border-warning w-100 shadow-lg bg-white p-3" style="width: 300px;">
                 <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 250px;") %>
                 <div class="card-body text-center">
-                    <h5 class="card-title">Jardi Martinez Jordan</h5>
+                    <h6 class="card-title">Jardi Martinez Jordan</h6>
                     <p class="card-text">Technical Lead</p>
                 </div>
             </div>
@@ -125,6 +146,7 @@
         </div>
       </div>
     </div>
+    <!-- holding us up away from the footer -->
     <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="about" style="height: 100px;">
     </div>
 
