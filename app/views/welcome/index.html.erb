@@ -8,7 +8,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= image_tag("North-Hlth-Sci-Bldg900x416.jpeg", class: "d-block w-100", alt: "North Seattle Campus") %>
+        <%= image_tag("North-Hlth-Sci-Bldg900x416.jpg", class: "d-block w-100", alt: "North Seattle Campus") %>
       </div>
       <div class="carousel-item">
         <%= image_tag("placeholder2.png", class: "d-block w-100", alt: "Android") %>
@@ -32,13 +32,13 @@
 
   <div class="d-flex flex-column align-items-center justify-content-center"
        id="mainContent"
-       style="background-image: url('../../assets/images/paper-texture-structure-stained-paper.jpeg')">
+       style="background-image: url('../../assets/images/paper-texture-structure-stained-paper.jpg')">
 
     <div class="w-75 d-flex justify-content-around shadow-lg bg-white p-3" id="community">
       <div class="container col-9" height="500">
-        <div class="d-flex justify-content-center row mb-5" id="discord">
+        <div class="d-flex justify-content-center align-items-center row mb-5" id="discord">
           <div class="col-6">
-            <h1 style="margin-top: 20px;">We're a community of students who came together... </h1>
+            <h1 style="margin-top: 20px;">We're a <span class="rounded" style="background-color: #ccdefc; padding: 5px;">community</span> of students who came together... </h1>
           </div>
           <div class="col-6" >
             <div class="card w-100 shadow bg-white p-3">
@@ -56,38 +56,29 @@
     </div>
 
     <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="events">
-      <div class="container col-9">
-        <div class="row mb-5">
-          <h1 class="text-right my-5">...looking to build skills...</h1>
+      <div class="container col-12">
+        <div class="row mb-5 justify-content-center">
+          <h1 class="my-5">...looking to build <span class="rounded" style="background-color: #fcdad7; padding: 5px;">skills</span>...</h1>
         </div>
         <div class="row mb-5">
-          <%= image_tag("allthetech.png", class: "d-block w-100", alt: "Firebase Logo") %>
+          <%= image_tag("allthetech.png", class: "d-block w-100 ml-3", alt: "Firebase Logo") %>
         </div>
       </div>
 
     </div>
 
     <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="projects">
-      <div class="container col-9">
-        <div class="row mb-5">
-          <h1 class="text-right my-5">...and help our community thrive.</h1>
+      <div class="container col-12">
+        <div class="row justify-content-end">
+          <h1 class="my-5">...and <span class="rounded" style="background-color: #fcefc5; padding: 5px;">help</span> our community thrive.</h1>
         </div>
-      </div>
-    </div>
+        <%= image_tag("How-to-Become-Google-Developer-Students-ClubDSC-Lead.png", class: "w-100 shadow rounded", alt: "Collaborative") %>
 
-    <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="join">
-      <div class="container col-9">
-        <div class="row mb-5">
-          <h1 class="text-right my-5">Join us.</h1>
-
+        <div class="row justify-content-center align-items-center" style="margin-top: 110px; margin-bottom: 110px;">
+          <h1 class="my-5"><span class="rounded" style="background-color: #e1facd; padding: 5px;">Join us.</span></h1>
         </div>
-      </div>
-    </div>
 
-    <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="about">
-      <div class="container col-9">
-
-        <h1 class="text-center my-5">Meet the Core Team</h1>
+        <h1 class="text-center my-5">Our Core Team</h1>
         <div class="row mb-5">
           <div class="col-4" id="core-team-cards">
             <div class="card border-danger w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
