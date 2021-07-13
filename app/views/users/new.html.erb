@@ -3,11 +3,11 @@
 <% end %>
 
 <div class="d-flex flex-column align-items-center justify-content-center"
-     id="mainContent">
+     id="signup">
    <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" style="height:100vh;">
-    <div class="container">
-      <div class="col-5">
-        <div class="card p-3 m-5">
+     <div class="container mt-5">
+       <div class="row justify-content-center mt-5">
+         <div class="card p-3">
           <%= form_for @user do |f|%>
             <div class="form-group">
               <%= f.label :username%><br>
@@ -18,7 +18,7 @@
               <%= f.label :password %><br>
               <%= f.password_field :password, class: 'form-control'%><br>
               <%= f.submit 'Sign me up', :class => 'btn btn-default btn-lg btn-submit'%>
-              <%= link_to "Cancel", '/login'%>
+              <%= link_to "I meant to log in", '/login'%>
             </div>
 
           <%end%>
