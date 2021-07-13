@@ -27,19 +27,21 @@
           <div class="navbar-nav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="#events" href="#events">Events</a>
+                <a class="nav-link" href="#community">Community</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#community">Community</a>
+                <a class="nav-link active" aria-current="#events" href="#events">Events</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about">About Us</a>
               </li>
-              <%= link_to "Become a Member", new_user_path,  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
+
               <% if logged_in? %>
                 <li class="nav-item">
-                  <a class="nav-link" href="#events"><span style="color: green;">Projects</span></a>
+                  <a class="nav-link btn btn-sm btn-outline-success" href="<%=projects_path%>"<span style="color: green;">Projects</span></a>
                 </li>
+              <% else %>
+                <%= link_to "Become a Member", new_user_path,  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
               <% end %>
             </ul>
           </div>

@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create, :show]
+  skip_before_action :authorized, only: [:new, :create]
 
   def new
     @user = User.new
   end
 
   def show
-    puts "PICKLES #{params}"
   end
 
   def create
