@@ -1,5 +1,4 @@
 class Project < ApplicationRecord
-
      validates :title, presence: true, uniqueness: true, on: :create
      validates :project_type_id, presence: true
      validates :client_id, presence: true

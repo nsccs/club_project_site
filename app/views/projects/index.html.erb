@@ -1,37 +1,40 @@
 <div class="d-flex flex-column align-items-center justify-content-center"
      id="mainContent">
 
-  <div class="w-75 d-flex justify-content-around shadow-lg bg-white p-3" style="height:100vh;">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">Client</th>
-          <th scope="col">Client Contact</th>
-          <th scope="col">Max Team Size</th>
-          <th scope="col">Level of Difficulty</th>
-          <th scope="col">Status</th>
-        </tr>
-      </thead>
+  <div class="d-flex shadow-lg bg-white p-3" style="min-height: 100vh; min-width: 90%;">
 
-      <tbody>
-        <% @projects.each do |project| %>
-          <tr>
-            <th scope="row"><%= project.id %></th>
-            <td><%= project.title %></td>
-            <td><%= project.client.name %></td>
-            <td><%= project.client.phone_number %></td>
-            <td><%= project.team_size_limit%></td>
-            <td><%= project.project_type.name %></td>
-            <td><%= project.status.name %></td>
-            <td><%= link_to "Show", project %></td>
+    <div class="container">
+      <% @projects.each do |project| %>
+      <div class="row m-3">
+        <!-- <div class="col-sm-4"> -->
+          <div class="card shadow-lg w-100" style="width: 18rem;">
+            <div class="card-body">
+              <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 100px; width: 100px;") %>
+              <h5 class="card-title"><%= project.title %></h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><span class="text-bold">Client:</span> <%= project.client.name %></li>
+              <li class="list-group-item"><span class="text-bold">Contact:</span> <%= project.client.phone_number %></li>
+              <li class="list-group-item"><span class="text-bold">Team Size Limit:</span> <%= project.team_size_limit%></li>
+              <li class="list-group-item"><span class="text-bold">Level:</span> <%= project.project_type.name %></li>
+              <li class="list-group-item"><span class="text-bold">Status:</span> <%= project.status.name %></li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Join this team</a>
+              <%= link_to "Show", project %>
+            </div>
+          </div>
+        <!-- </div> -->
 
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+      </div>
+<% end %>
+<div class="row">
+    <div class="card shadow-lg w-100" style="width: 18rem; height:110px;">
 
-    <br>
+    </div>
+
+</div>
+    </div>
   </div>
 </div>
