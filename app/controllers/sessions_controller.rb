@@ -5,13 +5,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts "pickles #{params}"
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to welcome_path
     else
-      flash[:warning] = "The username or password is incorrect:/"
+      flash[:warning] = "The email or password is incorrect:/"
       redirect_to login_path
     end
   end

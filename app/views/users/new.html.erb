@@ -12,6 +12,8 @@
          <div class="card p-3">
           <%= form_for @user do |f|%>
             <div class="form-group">
+              <%= f.label :email%><br>
+              <%= f.text_field :email, class: 'form-control'%><br>
               <%= f.label :username%><br>
               <%= f.text_field :username, class: 'form-control has-validation, autofocus: true'%><br>
               <div class="invalid-feedback">

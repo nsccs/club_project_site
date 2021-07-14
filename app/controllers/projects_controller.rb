@@ -6,9 +6,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.find_by()
+    puts project_params
+    @project = Project.new(project_params)
     if @project.save
-      redirect_to project_path
+      redirect_to projects_path
     else
       flash[:warning] = "Please try again"
       redirect_to new_project_path
@@ -21,5 +22,11 @@ class ProjectsController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+
+  def project_params
+    params.require(:project).permit(:title, :client_id, :team_size_limit, :project_type_id, :status_id)
   end
 end

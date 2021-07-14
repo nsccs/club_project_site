@@ -1,7 +1,35 @@
 <div class="d-flex flex-column align-items-center justify-content-center"
-     id="mainContent">
+     id="new-poject">
+   <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" style="height:100vh;">
 
-  <div class="w-75 d-flex justify-content-around shadow-lg bg-white p-3" style="height:100vh;">
-    <h1>nothing yet. nope nope nope but soon</h1>
+     <div class="container mt-5">
+       <% if flash[:warning] %>
+       <div class="row justify-content-center">
+         <div class="alert alert-warning" role="alert"><%= flash[:warning] %></div>
+       </div>
+       <% end %>
+       <div class="row justify-content-center mt-5">
+         <div class="card p-3">
+          <%= form_for @project do |f|%>
+            <div class="form-group">
+              <%= f.label :title%><br>
+              <%= f.text_field :title, class: 'form-control has-validation, autofocus: true'%><br>
+              <div class="invalid-feedback">
+                Please choose a title for the project.
+              </div>
+              <%= f.label :client_id %><br>
+              <%= f.collection_select :client_id, Client.order(:id), :id, :name, class: 'form-control' %><br>
+              <%= f.label :team_size_limit%><br>
+              <%= f.select :team_size_limit, [1,2,3,4,5], class: 'form-control' %><br>
+              <%= f.label :project_type_id %><br>
+              <%= f.collection_select :project_type_id, ProjectType.order(:id), :id, :name, class: 'form-control' %><br>
+              <%= f.label :status_id %><br>
+              <%= f.collection_select :status_id, Status.order(:id), :id, :name, class: 'form-control' %><br>
+              <%= f.submit 'Create New Project', :class => 'btn btn-default btn-lg btn-submit'%>
+            </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

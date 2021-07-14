@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_194101) do
+ActiveRecord::Schema.define(version: 2021_07_14_012325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
   create_table "project_types", force: :cascade do |t|
@@ -41,6 +43,13 @@ ActiveRecord::Schema.define(version: 2021_07_13_194101) do
     t.integer "team_size_limit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.bigint "status_id"
+    t.bigint "project_type_id"
+    t.bigint "client_id"
+    t.index ["client_id"], name: "index_projects_on_client_id"
+    t.index ["project_type_id"], name: "index_projects_on_project_type_id"
+    t.index ["status_id"], name: "index_projects_on_status_id"
   end
 
   create_table "statuses", force: :cascade do |t|
@@ -54,8 +63,14 @@ ActiveRecord::Schema.define(version: 2021_07_13_194101) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
+    t.string "email"
   end
 
+  add_foreign_key "clients", "users"
   add_foreign_key "project_users", "projects"
   add_foreign_key "project_users", "users"
+  add_foreign_key "projects", "clients"
+  add_foreign_key "projects", "project_types"
+  add_foreign_key "projects", "statuses"
 end
