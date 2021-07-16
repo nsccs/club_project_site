@@ -1,12 +1,33 @@
-<% if flash[:warning] %>
-    <div class="notice"><%= flash[:warning] %></div>
-<% end %>
+<div class="d-flex flex-column align-items-center justify-content-center"
+     id="signup">
+   <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" style="height:100vh;">
 
-<h1>Sign Up</h1>
-<%= form_for @user do |f|%>
-  <%= f.label :username%><br>
-  <%= f.text_field :username%><br>
-  <%= f.label :password%><br>
-  <%= f.password_field :password%><br>
-  <%= f.submit %>
-<%end%>
+     <div class="container mt-5">
+       <% if flash[:warning] %>
+       <div class="row justify-content-center">
+         <div class="alert alert-warning" role="alert"><%= flash[:warning] %></div>
+       </div>
+       <% end %>
+       <div class="row justify-content-center mt-5">
+         <div class="card p-3">
+          <%= form_for @user do |f|%>
+            <div class="form-group">
+              <%= f.label :email%><br>
+              <%= f.text_field :email, class: 'form-control'%><br>
+              <%= f.label :username%><br>
+              <%= f.text_field :username, class: 'form-control has-validation, autofocus: true'%><br>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+              <%= f.label :password %><br>
+              <%= f.password_field :password, class: 'form-control'%><br>
+              <%= f.submit 'Sign me up', :class => 'btn btn-default btn-lg btn-submit'%>
+              <%= link_to "I meant to log in", '/login'%>
+            </div>
+
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get "/welcome", to: "welcome#index"
   get "/demopage", to: "demopage#index"
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :index]
+  resources :projects, only: [:new, :create, :show, :index]
+  resources :clients, only: [:new, :create, :show, :index]
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

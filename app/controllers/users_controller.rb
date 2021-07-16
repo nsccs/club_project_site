@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create, :show]
+  skip_before_action :authorized, only: [:new, :create]
 
   def new
     @user = User.new
   end
 
   def show
-
   end
 
   def create
@@ -23,6 +22,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:unique_id, :username, :password)
+    params.require(:user).permit(:unique_id, :email, :username, :password)
   end
 end
