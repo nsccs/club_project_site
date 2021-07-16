@@ -8,15 +8,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
     <script src="https://kit.fontawesome.com/e5bcf3436b.js" crossorigin="anonymous"></script>
   </head>
 
   <body style="background: url(<%= image_path('paper-texture-structure-stained-paper.jpg')%>) repeat-y center center fixed;">
 
   <!-- Navbar -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow-lg justify-content-between" id="nav" style="height:110px;">
-      <div class="container-fluid d-flex justify-content-start">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow-lg justify-content-between" id="nav" style="min-height:110px;">
+      <div class="container-fluid d-flex justify-content-between">
         <a class="nav-item navbar-brand" href="<%=welcome_path%>">
           <%= image_tag('logotransparent.png', alt: 'logo', style: 'height: 90px; width: 90px;') %>
         </a>
@@ -27,37 +26,43 @@
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
           <div class="navbar-nav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="#events" href="#events">Events</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#community">Community</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About Us</a>
-              </li>
-              <%= link_to "Become a Member", new_user_path,  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
-              <% if logged_in? %>
+              <% if !logged_in? %>
                 <li class="nav-item">
-                  <a class="nav-link" href="#events"><span style="color: green;">Projects</span></a>
+                  <a class="nav-link" href="#community">Community</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="#events" href="#events">Events</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <%= link_to "Become a Member", new_user_path,  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
               <% end %>
             </ul>
           </div>
           <div class="navbar-nav ml-auto d-flex justify-content-between">
             <% if logged_in? %>
-            <div class="nav-item dropdown">
-              <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
-                <img src=<%= image_path('logotransparent.png')%> class="avatar" alt="Avatar" , style='height: 90px; width: 90px;'>
-                <%= current_user.username %>
+            <div class="m-auto dropdown">
+              <a href="#" data-toggle="dropdown" class="btn btn-success dropdown-toggle user-action text-center">
+
+                Oh hai, <%= current_user.username %>
                 <b class="caret"></b>
               </a>
-              <div class="dropdown-menu">
-                <%= link_to "Logout", '/logout', class: "nav-item", id: "logout-link",method: :post%>
+              <div class="dropdown-menu dropdown-menu-lg-end">
+                <li class="dropdown-item btn text-center">
+                  <a class="nav-link btn btn-sm btn-outline-success" href="<%=projects_path%>"<span style="color: green;">Projects</span></a>
+                </li>
+                <li class="dropdown-item btn text-center">
+                  <a class="nav-link" href="<%=new_client_path%>">New Client</a>
+                </li>
+                <li class="dropdown-item btn text-center">
+                  <a class="nav-link" href="<%=new_project_path%>">New Project</a>
+                </li>
+                <%= link_to "Logout", '/logout', class: "dropdown-item btn text-center", id: "logout-link",method: :post%>
               </div>
             <% else %>
-            <div class="nav-item">
-              <%= link_to "Log in", '/login',  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
+            <div class="nav-item m-auto">
+              <%= link_to "Log in", '/login',  class: "nav-item btn btn-sm btn-outline-success", method: :get %>
             <% end %>
           </div>
         </div>
@@ -115,10 +120,5 @@
       <!-- Grid container -->
 
     </footer>
-    <!-- <script type="text/javascript">
-      import { Modal } from 'bootstrap.esm.min.js'
-      let myModal = new Modal(document.getElementById('loginModal'));
-      myModal.show();
-    </script> -->
   </body>
 </html>

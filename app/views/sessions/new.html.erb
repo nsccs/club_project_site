@@ -1,25 +1,26 @@
-<% if flash[:warning] %>
-    <div class="notice"><%= flash[:warning] %></div>
-<% end %>
-
 
 <div class="d-flex flex-column align-items-center justify-content-center"
-     id="mainContent">
+     id="login">
    <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" style="height:100vh;">
-     <div class="container">
-       <div class="col-5">
-         <div class="card p-3 m-5">
+     <div class="container mt-5">
+       <% if flash[:warning] %>
+       <div class="row justify-content-center">
+         <div class="alert alert-warning" role="alert"><%= flash[:warning] %></div>
+       </div>
+       <% end %>
+       <div class="row justify-content-center mt-5">
+         <div class="card p-3">
            <%= form_tag '/login', method: 'post', :class => 'form' do  %>
              <div class="form-group">
-               <%= label_tag 'username', 'Username'%>
-               <%= text_field_tag :username, nil, class: 'form-control', autofocus: true %>
+               <%= label_tag 'email', 'Email'%>
+               <%= text_field_tag :email, nil, class: 'form-control', autofocus: true %>
              </div>
              <div class="form-group">
                <%=label_tag 'password', "Password" %>
                <%= password_field_tag :password, nil, class: 'form-control'  %>
              </div>
              <%= submit_tag "Log on in!", class: 'btn btn-default btn-lg btn-submit' %>
-             <%= link_to "Cancel" ,new_user_path, class: 'btn btn-default btn-lg'%>
+             <%= link_to "I meant to sign up" ,new_user_path, class: 'btn btn-default btn-lg'%>
            <%end%>
          </div>
        </div>
