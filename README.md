@@ -1,7 +1,7 @@
 # NSC Computer Science Club Website
 
 ## Table of Contents
-* [Team Workflow] (#team-workflow)
+* Team Workflow
 * [Ruby version](#ruby-version)
 * [System dependencies](#system-dependencies)
 * [Configuration](#configuration)
