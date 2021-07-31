@@ -12,7 +12,7 @@
 * [Deployment instructions](#deployment-instructions)
 
 ## Team workflow
-- Branch naming convention: NSCCS-<ticket number> where the ticket number is listed in the issue headline.
+- Branch naming convention: NSCCS-ticket number where the ticket number is listed in the issue headline.
 - All branches created are created off of release_candidate. 
 - All PRs are pointed to release_candidate
 - No merging without code review by a peer
