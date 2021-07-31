@@ -1,6 +1,7 @@
 # NSC Computer Science Club Website
 
 ## Table of Contents
+* [Team Workflow] (#team-workflow)
 * [Ruby version](#ruby-version)
 * [System dependencies](#system-dependencies)
 * [Configuration](#configuration)
@@ -9,6 +10,13 @@
 * [How to run the test suite](#how-to-run-the-test-suite)
 * [Services](#services)
 * [Deployment instructions](#deployment-instructions)
+
+## Team workflow
+- All branches created are created off of release_candidate. 
+- All PRs are pointed to release_candidate
+- No merging without code review by a peer
+- Only René or other admin merges release_candidate to main
+- Once merged, announcement is made so all devs can pull in changes and update locally
 
 ## Ruby version
 3.0.1
