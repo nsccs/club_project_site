@@ -6,7 +6,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    puts project_params
     @project = Project.new(project_params)
     if @project.save
       redirect_to projects_path
@@ -18,6 +17,10 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+  end
+
+  def show
+
   end
 
   def destroy

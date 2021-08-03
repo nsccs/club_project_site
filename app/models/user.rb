@@ -8,6 +8,7 @@ class User < ApplicationRecord
      validates :password, presence: true, on: :create
 
      has_many :project_users
+     has_many :clients
 
 
      private
