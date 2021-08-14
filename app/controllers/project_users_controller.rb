@@ -3,8 +3,6 @@ class ProjectUsersController < ApplicationController
 
   def create
     #create new record
-    puts "PICKLES"
-    puts params
     project_user = ProjectUser.new(project_users_params)
 
     if project_user.save!
