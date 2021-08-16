@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 2021_07_14_012325) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "project_users", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "project_users", id: false, force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
   end
 
   create_table "projects", force: :cascade do |t|
