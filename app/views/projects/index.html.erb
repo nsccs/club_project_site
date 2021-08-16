@@ -1,40 +1,39 @@
 <div class="d-flex flex-column align-items-center justify-content-center"
      id="mainContent">
-
   <div class="shadow-lg bg-white p-3" style="min-height: 100vh; min-width: 90%;">
-
     <div class="container">
       <% @projects.each do |project| %>
       <div class="row m-3">
-        <!-- <div class="col-sm-4"> -->
-          <div class="card shadow-lg w-100" style="width: 18rem;">
-            <div class="card-body">
-              <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 100px; width: 100px;") %>
-              <h5 class="card-title"><%= project.title %></h5>
-              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><span class="text-bold">Client:</span> <%= project.client.name %></li>
-              <li class="list-group-item"><span class="text-bold">Contact:</span> <%= project.client.phone_number %></li>
-              <li class="list-group-item"><span class="text-bold">Team Size Limit:</span> <%= project.team_size_limit%></li>
-              <li class="list-group-item"><span class="text-bold">Level:</span> <%= project.project_type.name %></li>
-              <li class="list-group-item"><span class="text-bold">Status:</span> <%= project.status.name %></li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Join this team</a>
-              <%= link_to "Show", project %>
-            </div>
+        <div class="card shadow-lg w-100" style="width: 18rem;">
+          <div class="card-body">
+            <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 100px; width: 100px;") %>
+            <h5 class="card-title"><%= project.title %></h5>
           </div>
-        <!-- </div> -->
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span class="text-bold">Client:</span> <%= project.client.name %></li>
+            <li class="list-group-item"><span class="text-bold">Contact:</span> <%= project.client.phone_number %></li>
+            <li class="list-group-item"><span class="text-bold">Team Size Limit:</span> <%= project.team_size_limit%></li>
+            <li class="list-group-item"><span class="text-bold">Level:</span> <%= project.project_type.name %></li>
+            <li class="list-group-item"><span class="text-bold">Status:</span> <%= project.status.name %></li>
+            <% if project.users.any? %>
+                <li class="list-group-item"><span class="text-bold">Team Members:</span>
+                    <% project.users.each do |u| %>
+                      <ul><%= u.username %></ul>
+                    <% end %>
+                  </li>
 
+            <% end %>
+            <div class="d-flex justify-content-center p-3">
+              <%= button_to "Join this Team", project_users_path(:method => :post, :project_users => {user_id: current_user.id, project_id: project.id}) %>
+            </div>
+          </ul>
+        </div>
       </div>
-<% end %>
-<div class="row">
-    <div class="card shadow-lg w-100" style="width: 18rem; height:110px;">
-
-    </div>
-
-</div>
+      <% end %>
+      <div class="row">
+          <div class="card shadow-lg w-100" style="width: 18rem; height:110px;">
+          </div>
+      </div>
     </div>
   </div>
 </div>
