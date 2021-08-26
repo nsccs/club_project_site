@@ -51,10 +51,16 @@
 
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
           <div class="navbar-nav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+            <ul class="navbar-nav me-auto mb-2mb-lg-0 align-items-center">
               <% if !logged_in? %>
-                <%= link_to "Become a Member", "https://gdsc.community.dev/north-seattle-college/",  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
+                <li class="nav-item"><%= link_to "Become a Member", "https://gdsc.community.dev/north-seattle-college/",  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
               <% end %>
+              <li class="nav-item"><%= link_to "About", "#",  class: "nav-link", method: :get %></li>
+              <li class="nav-item"><%= link_to "Community", "#",  class: "nav-link", method: :get %></li>
+              <li class="nav-item"><%= link_to "Events", "#",  class: "nav-link", method: :get %></li>
+              <li class="nav-item"><%= link_to "Projects", "#",  class: "nav-link", method: :get %></li>
+              <li class="nav-item"><%= link_to "Solutions Challege", "#",  class: "nav-link", method: :get %></li>
+              <li class="nav-item"><%= link_to "AppDev Partnership", "#",  class: "nav-link", method: :get %></li>
             </ul>
           </div>
           <div class="navbar-nav ml-auto d-flex justify-content-between">
