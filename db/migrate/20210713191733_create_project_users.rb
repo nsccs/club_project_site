@@ -1,4 +1,4 @@
-class CreateProjectUsers < ActiveRecord::Migration[6.1]
+class CreateProjectsUsers < ActiveRecord::Migration[6.1]
   def change
     create_join_table :projects, :users
   end
