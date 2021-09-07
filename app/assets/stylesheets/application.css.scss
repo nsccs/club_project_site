@@ -40,11 +40,16 @@
 
 }
 
+.btn:hover {
+    background-color: #E8F5E9 !important;
+}
+
 
  body {
    margin: 0;
    font-family: 'GoogleSans-Regular-v1';
    color: #757575;
+   font-size: 28px;
 
    -webkit-background-size: cover;
    -moz-background-size: cover;

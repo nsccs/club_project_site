@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Praise the Loaf</title>
+    <title>GDSC Member Project Portal</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag   %>
@@ -52,29 +52,26 @@
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
           <div class="navbar-nav">
             <ul class="navbar-nav me-auto mb-2mb-lg-0 align-items-center">
-              <% if !logged_in? %>
-                <li class="nav-item"><%= link_to "Become a Member", "https://gdsc.community.dev/north-seattle-college/",  class: "nav-item btn btn-sm btn-outline-secondary", method: :get %>
+              <% if logged_in? %>
+              <li class="nav-item btn text-center">
+                <a class="nav-link btn btn-lg btn-outline-success" href="<%=projects_path%>"<span style="color: green;">Projects</span></a>
+              </li>
+              <% else %>
+              <li class="nav-item btn text-center">
+                <a class="nav-link" href="#community"<span style="color: green;">About our GDSC</span></a>
+              </li>
               <% end %>
-              <li class="nav-item"><%= link_to "About", "#",  class: "nav-link", method: :get %></li>
-              <li class="nav-item"><%= link_to "Community", "#",  class: "nav-link", method: :get %></li>
-              <li class="nav-item"><%= link_to "Events", "#",  class: "nav-link", method: :get %></li>
-              <li class="nav-item"><%= link_to "Projects", "#",  class: "nav-link", method: :get %></li>
-              <li class="nav-item"><%= link_to "Solutions Challege", "#",  class: "nav-link", method: :get %></li>
-              <li class="nav-item"><%= link_to "AppDev Partnership", "#",  class: "nav-link", method: :get %></li>
             </ul>
           </div>
           <div class="navbar-nav ml-auto d-flex justify-content-between">
             <% if logged_in? %>
             <div class="m-auto dropdown">
               <a href="#" data-toggle="dropdown" class="btn btn-success dropdown-toggle user-action text-center">
-
                 Oh hai, <%= current_user.username %>
                 <b class="caret"></b>
               </a>
               <div class="dropdown-menu dropdown-menu-lg-end">
-                <li class="dropdown-item btn text-center">
-                  <a class="nav-link btn btn-sm btn-outline-success" href="<%=projects_path%>"<span style="color: green;">Projects</span></a>
-                </li>
+
                 <li class="dropdown-item btn text-center">
                   <a class="nav-link" href="<%=new_client_path%>">New Client</a>
                 </li>
@@ -85,7 +82,7 @@
               </div>
             <% else %>
             <div class="nav-item m-auto">
-              <%= link_to "Log in", '/login',  class: "nav-item btn btn-sm btn-outline-success", method: :get %>
+              <%= link_to "Project Portal Log in", '/login',  class: "nav-item btn btn-sm btn-outline-success", method: :get %>
             <% end %>
           </div>
         </div>
@@ -137,8 +134,8 @@
           </section>
           <!-- Section: Social media -->
         </div>
-        © 2021 Copyright:
-        <a href="https://github.com/NSC-Computer-Science-Club">North Seattle CS Club</a>
+        <p style="font-size: 12px;">© 2021 Copyright:
+        <a href="https://github.com/NSC-Computer-Science-Club">North Seattle CS Club</a></p>
       </div>
       <!-- Grid container -->
 
