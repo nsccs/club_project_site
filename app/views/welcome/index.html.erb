@@ -1,113 +1,154 @@
 <div class="d-flex flex-column align-items-center justify-content-center" >
 
-  <%= image_tag("North-Hlth-Sci-Bldg900x416.jpg", class: "d-block w-100", alt: "North Seattle Campus") %>
+
 
 
   <div class="d-flex flex-column align-items-center justify-content-center"
        id="mainContent" >
-    <div class="w-75 d-flex justify-content-around shadow-lg bg-white p-3" id="community" style="padding-top: 115px; min-width: 90%;">
-      <div class="container-fluid col-md-12" height="500">
-        <div class="d-flex justify-content-md-center align-items-md-center row mb-5" id="discord">
-          <div class="col-md-6 text-center">
-            <h1 style="margin-top: 20px;">We're a <span class="rounded" style="color: #4285F4; padding: 5px;">community</span> of students who came together... </h1>
-          </div>
-          <div class="col col-md-6" >
+     <div class="w-75 d-flex justify-content-around shadow-lg bg-white p-3" style="padding-top: 115px; min-width: 90%;">
+       <div class="container-fluid col-md-9" height="500">
+
+         <div class="d-flex justify-content-md-center row text-center" id="project-portal-about">
+             <div class="">
+               <%= image_tag("North-Hlth-Sci-Bldg900x416.jpg", class: "d-block w-100", alt: "North Seattle Campus") %>
+             </div>
+             <h1 class="mt-5" style="margin-top: 20px;">Welcome to the Google Developer Student Club's Project Portal.</h1>
+
+             <div class="text-left">
+               <ol>
+                 <li>If you haven't already, officially join the GDSC <a href="https://gdsc.community.dev/north-seattle-college">here</a>.</li>
+                 <li>Click "Project Portal Log in" at the top right corner of this page.</li>
+                 <li>Log in or Sign up.</li>
+                 <li>Find a project you love, and click "Join Team"</li>
+               </ol>
+             </div>
+             <div class="m-5" id="community">
+             </div>
+         </div>
+
+       </div>
+
+     </div>
+
+
+
+    <div class="w-75 d-flex justify-content-around shadow-lg bg-white p-3" style="padding-top: 115px; min-width: 90%;">
+      <div class="container-fluid col-md-9" height="500">
+        <div class="d-flex justify-content-md-center align-items-md-center row mb-5 " id="discord">
+          <h1 style="margin-top: 20px;">We're a community of students working<span class="rounded" style="color: #4285F4; padding: 5px;"> together</span>.</h1>
             <div class="card w-100 shadow bg-white p-3">
-              <iframe src="https://discord.com/widget?id=564559681339785228&theme=dark"
-                      width="100%"
-                      height="350"
-                      allowtransparency="true"
-                      frameborder="0"
-                      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-              </iframe>
+              <div class="row justify-content-around">
+                <div class="col-md-6">
+                  <ul class="list-group text-left m-5">
+                    <li class="list-group-item">Weekly algorithm challenges</li>
+                    <li class="list-group-item">Tutoring in STEM courses</li>
+                    <li class="list-group-item">Mentorship</li>
+                  </ul>
+                </div>
+                <div class="col-md-5">
+                  <iframe src="https://discord.com/widget?id=564559681339785228&theme=dark"
+                    width="100%"
+                    height="100%"
+                    allowtransparency="true"
+                    frameborder="0"
+                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+                  </iframe>
+                </div>
+
+              </div>
+
+            </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="events" style="padding-top: 115px; min-width: 90%;">
+      <div class="container-fluid col-md-9">
+        <div class="d-flex justify-content-md-center align-items-md-center row mb-5">
+          <h1 >We're a community of students looking to <span class="rounded" style="color: #EA4335; padding: 5px;">build skills</span>.</h1>
+        </div>
+        <div class="row">
+          <%= image_tag("fourskills.png", class: "d-block w-100 ml-3", alt: "Firebase Logo") %>
+        </div>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  No-Programming Experience Required
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Taught by Googlers and Students
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Android Mobile App Development Workshops
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Computer Science and Developer Skills Tutorials
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="w-75 d-flex justify-content-center shadow-lg bg-white" id="events" style="padding-top: 115px; min-width: 90%;">
+    <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" id="about" style="padding-top: 115px; min-width: 90%;">
       <div class="container-fluid col-md-12">
-        <div class="row mb-5 justify-content-center text-center">
-          <h1 class="my-5">...looking to build <span class="rounded" style="color: #EA4335; padding: 5px;">skills</span>...</h1>
+        <div class="d-flex justify-content-md-center align-items-md-center row mb-5">
+          <h1 >We're a community of students who want to <span class="rounded" style="color:  #FBBC04; padding: 5px;">give back</span>.</h1>
         </div>
-        <div class="row mb-5">
-          <%= image_tag("allthetech.png", class: "d-block w-100 ml-3", alt: "Firebase Logo") %>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="w-75 d-flex justify-content-center shadow-lg bg-white" id="about" style="padding-top: 115px; min-width: 90%;">
-      <div class="container-fluid col-md-12">
-        <div class="row justify-content-end text-center">
-          <h1 class="my-5">...and <span class="rounded" style="color:  #FBBC04; padding: 5px;">help</span> our community thrive.</h1>
-        </div>
-        <%= image_tag("How-to-Become-Google-Developer-Students-ClubDSC-Lead.png", class: "w-100 shadow rounded", alt: "Collaborative") %>
-
-        <div class="row justify-content-center align-items-center" style="margin-top: 110px; margin-bottom: 110px;">
-          <h1 class="my-5"><a href="https://gdsc.community.dev/north-seattle-college/"><span class="rounded" style="color: #34A853; padding: 15px;">Join us.</span></a></h1>
+        <div class="d-flex justify-content-md-center align-items-md-center row">
+          <ul class="list-group text-left m-5">
+            <li class="list-group-item">Application Developer Program Partnership</li>
+            <li class="list-group-item">Projects Proposed by our Community</li>
+            <li class="list-group-item">Solutions Challenge 2022!</li>
+            <li class="list-group-item">Team Process Support and Mentorship</li>
+          </ul>
         </div>
 
-        <h1 class="text-center my-5">Our Core Team</h1>
-        <div class="row mb-5">
-          <div class="col-md-4" id="core-team-cards">
-            <div class="card border-danger w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
-                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 200px;") %>
-                <div class="card-body text-center">
-                    <h5 class="card-title">René Capella</h5>
-                    <p class="card-text">President</p>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4" id="core-team-cards">
-            <div class="card border-warning w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
-                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 200px;") %>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Bill Barry</h5>
-                    <p class="card-text">Faculty Advisor</p>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4" id="core-team-cards">
-            <div class="card border-success w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
-                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 200px;") %>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Lilith Caldwell</h5>
-                    <p class="card-text">Vice Lead</p>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4" id="core-team-cards">
-            <div class="card border-primary w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
-                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 200px;") %>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Beck Thompson</h5>
-                    <p class="card-text">Community Lead</p>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4" id="core-team-cards">
-            <div class="card border-danger w-100 shadow-lg bg-white p-3 mb-5" style="width: 300px;">
-                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 200px;") %>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Kristin Jue</h5>
-                    <p class="card-text">Public Relations Lead</p>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4" id="core-team-cards">
-            <div class="card border-warning w-100 shadow-lg bg-white p-3" style="width: 300px;">
-                <%= image_tag("GD.png", class: "card-img-top", alt: "sample image", style: "height: 200px;") %>
-                <div class="card-body text-center">
-                    <h6 class="card-title">Jardi Martinez Jordan</h6>
-                    <p class="card-text">Technical Lead</p>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
     <!-- holding us up away from the footer -->
     <div class="w-75 d-flex justify-content-center shadow-lg bg-white p-3" style="height: 110px; min-width: 90%;">
     </div>
